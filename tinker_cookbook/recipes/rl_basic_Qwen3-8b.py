@@ -23,7 +23,7 @@ def build_config_blueprint() -> chz.Blueprint[train.Config]:
             "log_path": "/tmp/tinker-examples/rl_basic_qwen3-8b",
             "dataset_builder": builder,
             "learning_rate": 4e-5,
-            "max_tokens": 256,
+            "max_tokens": 1024,
             "eval_every": 0,
             "loss_fn": "ppo", # enable ppo loss function, default is importance_sampling
         }
