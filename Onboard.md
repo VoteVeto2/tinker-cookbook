@@ -7,28 +7,20 @@ It's recommended to use either `conda` or `uv`, we will stick to `uv` for this r
 ```bash
 uv venv --python 3.11 .venv
 uv pip install tinker
-uv pip install -e . # e. means
+uv pip install -e . # e flag installs the package in **e**ditable mode
 ```
 ## Testing api-key 
 
 1. Set up your api key in `.env` 
+```bash
+TINKER_API_KEY="Your-api-keys"
+```
 2. run the following commands 
+```bash
+# Activate the uv venv. 
+.venv\Scripts\activate
 
-    - Activate the uv venv. 
-    ```bash
-    .venv\Scripts\activate
-    ```
+uv run --env-file .env python -m tinker_cookbook.recipes.rl_basic
 
-    - run the following python scripts
-    ```bash
-    uv run --env-file .env python -m tinker_cookbook.recipes.rl_basic
-    
-
-    or 
-
-    
-    uv run --env-file .env python -m tinker_cookbook.recipes.sl_basic
-    ```
-
-
-  $$\nabla \mathbb{E}{x\sim p\theta}\bigl[r(x) \bigr] = \mathbb{E}{x\sim q}\Bigl[r(x) \cdot \frac{\nabla p\theta(x)}{q(x)}\Bigr]$$
+uv run --env-file .env python -m tinker_cookbook.recipes.sl_basic
+```
